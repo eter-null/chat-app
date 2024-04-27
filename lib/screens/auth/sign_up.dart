@@ -8,6 +8,7 @@ import 'package:chat_application_iub_cse464/services/utils/validators.dart';
 import 'package:chat_application_iub_cse464/widgets/custom_buttons/Rouded_Action_Button.dart';
 import 'package:chat_application_iub_cse464/widgets/input_widgets/password_input_field.dart';
 import 'package:chat_application_iub_cse464/widgets/input_widgets/simple_input_field.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:random_avatar/random_avatar.dart';
@@ -127,16 +128,19 @@ class _SignUpState extends State<SignUp> {
                                 await auth.createUserWithEmailAndPassword(
                                     email: emailController.text.trim(),
                                     password: passwordController.text.trim()
-                                ).then((value) {
+                                ).then((value) async {
                                   UserManage().createUserProfile(userName: usernameController.text, userEmail: emailController.text.trim(),userID: auth.currentUser!.uid);
                                   Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Dashboard()), (route) => false);
                                   if(value.user != null)
                                     {
+                                      await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser?.uid).update({
+                                        'last_active': DateTime.now(),
+                                      });
                                       showSnackBar(
                                           context: context,
                                           title: "Successful",
                                           height: 200,
-                                          message: "Welcome to Chat META",
+                                          message: "Welcome to END Chat",
                                           failureMessage: false
                                       );
                                     }

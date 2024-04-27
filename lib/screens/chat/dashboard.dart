@@ -54,7 +54,7 @@ class _DashboardState extends State<Dashboard> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Welcome to", style: TextDesign().dashboardWidgetTitle),
-                    Text("Chat META", style: TextDesign().popHead.copyWith(color: MyColor.primary, fontSize: 22)),
+                    Text("END Chat", style: TextDesign().popHead.copyWith(color: MyColor.black, fontSize: 22)),
                   ],
                 ),
 

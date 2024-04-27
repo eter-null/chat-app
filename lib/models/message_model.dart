@@ -15,12 +15,14 @@ class MessageModel {
   String? uuid;
   String? name;
   Timestamp? time;
+  String? profileAvatar;
 
   MessageModel({
     this.message,
     this.uuid,
     this.name,
     this.time,
+    this.profileAvatar,
   });
 
   factory MessageModel.fromMap(Map<String, dynamic> json) => MessageModel(
@@ -28,6 +30,7 @@ class MessageModel {
     uuid: json["uuid"],
     name: json["name"],
     time: json["time"],
+    profileAvatar: json["profileAvatar"]
   );
 
   Map<String, dynamic> toMap() => {
@@ -35,10 +38,11 @@ class MessageModel {
     "uuid": uuid,
     "name": name,
     "time": time,
+    "profileAvatar": profileAvatar
   };
 
   @override
   String toString() {
-    return 'MessageModel{message: $message, uuid: $uuid, name: $name, time: $time}';
+    return 'MessageModel{message: $message, uuid: $uuid, name: $name, time: $time, "profileAvatar": $profileAvatar}';
   }
 }

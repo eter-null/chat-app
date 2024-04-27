@@ -1,5 +1,6 @@
 import 'package:chat_application_iub_cse464/screens/auth/sign_up.dart';
 import 'package:chat_application_iub_cse464/screens/chat/dashboard.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -81,14 +82,17 @@ class _LoginPageState extends State<LoginPage> {
                                 await auth.signInWithEmailAndPassword(
                                     email: emailController.text.trim(),
                                     password: passwordController.text.trim()
-                                ).then((value) {
+                                ).then((value) async {
                                   if(value.user != null)
                                   {
+                                    await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser?.uid).update({
+                                      'last_active': DateTime.now(),
+                                    });
                                     showSnackBar(
                                         context: context,
                                         title: "Successful",
                                         height: 200,
-                                        message: "Welcome to Chat META",
+                                        message: "Welcome to END Chat",
                                         failureMessage: false
                                     );
                                     Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Dashboard()), (route) => false);
