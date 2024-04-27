@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:random_avatar/random_avatar.dart';
 import 'package:intl/intl.dart'; // Import DateFormat to format timestamp
-
 import '../../../const_config/text_config.dart';
 
 class DiscoverPage extends StatefulWidget {
