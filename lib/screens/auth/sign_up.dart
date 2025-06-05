@@ -70,7 +70,7 @@ class _SignUpState extends State<SignUp> {
                   height: 30,
                 ),
                 Text("Welcome to", style: TextDesign().dashboardWidgetTitle),
-                Text("Chat META", style: TextDesign().popHead.copyWith(color: MyColor.primary, fontSize: 22)),
+                Text("End Chat", style: TextDesign().popHead.copyWith(color: MyColor.black, fontSize: 22)),
                 const SizedBox(height: 10),
                 Container(
                     height: size.height * 0.25,
