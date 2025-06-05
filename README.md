@@ -137,7 +137,7 @@ chat/{chatId} {
 
 | Authentication | Users Collection | Chat Collection |
 |----------------|----------------|----------------|
-| ![Auth](screenshots/Screenshot 2024-05-02_015015.png) | ![Discover](screenshots/Screenshot 2024-05-02_014925.png) | ![Chat](screenshots/Screenshot 2024-05-02_014956.png) |
+| ![Auth](screenshots/Screenshot_2024-05-02_015015.png) | ![Discover](screenshots/Screenshot_2024-05-02_014925.png) | ![Chat](screenshots/Screenshot_2024-05-02_014956.png) |
 
 ## 🌟 Key Features Implementation
 
