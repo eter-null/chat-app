@@ -1,6 +1,6 @@
 # Flutter Chat Application
 
-A real-time chat application built with Flutter and Firebase, featuring user authentication, profile avatars, and activity tracking; for my Multimedia Systems (Mobile App) university assignment in Spring'24 semester.
+A real-time chat application built with Flutter and Firebase, featuring user authentication, profile avatars, and activity tracking.
 
 
 ## 🚀 Features
